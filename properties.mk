@@ -116,10 +116,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 # Crypto
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.crypto.allow_encrypt_override=true \
-    ro.crypto.dm_default_key.options_format.version=2 \
-    ro.crypto.volume.filenames_mode=aes-256-cts \
-    ro.crypto.volume.metadata.method=dm-default-key \
-    ro.crypto.volume.options=::v2
+    ro.crypto.volume.filenames_mode=aes-256-cts
 
 # Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -132,6 +129,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.vulkan=adreno \
+    ro.hardware.egl=adreno \
     vendor.display.disable_scaler=0 \
     vendor.display.disable_excl_rect=0 \
     vendor.display.disable_excl_rect_partial_fb=1 \
@@ -141,10 +140,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.use_smooth_motion=1 \
     vendor.display.disable_offline_rotator=1 \
     vendor.display.disable_hw_recovery_dump=1
-
-# DPM
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.dpm.feature=1
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -192,10 +187,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.incremental.enable=1
 
-# Keymaster 4.0 - TDES support
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.hardware.keystore_desede=true
-
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     media.settings.xml=/vendor/etc/media_profiles_vendor.xml \
@@ -220,7 +211,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # Netflix
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.netflix.bsp_rev=Q7250-19133-1
+    ro.netflix.bsp_rev=Q6150-17263-1
 
 # NFC
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -286,7 +277,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     DEVICE_PROVISIONED=1 \
     persist.vendor.data.mode=concurrent \
     ril.subscription.types=NV,RUIM \
-    ro.telephony.default_network=27,10 \
+    ro.telephony.default_network=10,10 \
     ro.vendor.use_data_netmgrd=true \
     telephony.lteOnCdmaDevice=1,1
 
@@ -305,10 +296,10 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     debug.sf.use_phase_offsets_as_durations=1 \
     debug.sf.late.sf.duration=10500000 \
     debug.sf.late.app.duration=20500000 \
-    debug.sf.early.sf.duration=16000000 \
-    debug.sf.early.app.duration=33500000 \
+    debug.sf.early.sf.duration=21000000 \
+    debug.sf.early.app.duration=16500000 \
     debug.sf.earlyGl.sf.duration=13500000 \
-    debug.sf.earlyGl.app.duration=38000000
+    debug.sf.earlyGl.app.duration=21000000
 
 # Sensor
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
