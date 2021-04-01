@@ -75,10 +75,10 @@
                 <mixPort name="primary input" role="sink">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="8000,11025,12000,16000,22050,24000,32000,44100,48000"
-                             channelMasks="AUDIO_CHANNEL_IN_MONO,AUDIO_CHANNEL_IN_STEREO,AUDIO_CHANNEL_IN_FRONT_BACK,AUDIO_CHANNEL_IN_AMBISONIC,AUDIO_CHANNEL_INDEX_MASK_3,AUDIO_CHANNEL_INDEX_MASK_4"/>
+                             channelMasks="AUDIO_CHANNEL_IN_MONO,AUDIO_CHANNEL_IN_STEREO,AUDIO_CHANNEL_IN_FRONT_BACK,AUDIO_CHANNEL_INDEX_MASK_3,AUDIO_CHANNEL_INDEX_MASK_4"/>
                     <profile name="" format="AUDIO_FORMAT_PCM_8_24_BIT"
                              samplingRates="8000,11025,12000,16000,22050,24000,32000,44100,48000"
-                             channelMasks="AUDIO_CHANNEL_IN_MONO,AUDIO_CHANNEL_IN_STEREO,AUDIO_CHANNEL_IN_FRONT_BACK,AUDIO_CHANNEL_IN_AMBISONIC,AUDIO_CHANNEL_INDEX_MASK_3,AUDIO_CHANNEL_INDEX_MASK_4"/>
+                             channelMasks="AUDIO_CHANNEL_IN_MONO,AUDIO_CHANNEL_IN_STEREO,AUDIO_CHANNEL_IN_FRONT_BACK,AUDIO_CHANNEL_INDEX_MASK_3,AUDIO_CHANNEL_INDEX_MASK_4"/>
                 </mixPort>
                 <mixPort name="fm input" role="sink">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
@@ -108,8 +108,6 @@
                 <devicePort tagName="Wired Headphones" type="AUDIO_DEVICE_OUT_WIRED_HEADPHONE" role="sink">
                 </devicePort>
                 <devicePort tagName="Line Out" type="AUDIO_DEVICE_OUT_LINE" role="sink">
-                </devicePort>
-                <devicePort tagName="Dock Headset" type="AUDIO_DEVICE_OUT_ANLG_DOCK_HEADSET" role="sink">
                 </devicePort>
                 <devicePort tagName="BT SCO" type="AUDIO_DEVICE_OUT_BLUETOOTH_SCO" role="sink">
                 </devicePort>
@@ -164,8 +162,6 @@
                        sources="primary output,deep_buffer,compressed_offload"/>
                 <route type="mix" sink="Line Out"
                        sources="primary output,deep_buffer,compressed_offload"/>
-                <route type="mix" sink="Dock Headset"
-                       sources="primary output,deep_buffer"/>
                 <route type="mix" sink="BT SCO"
                        sources="primary output,deep_buffer"/>
                 <route type="mix" sink="BT SCO Headset"
@@ -190,38 +186,13 @@
                        sources="Telephony Rx"/>
                 <route type="mix" sink="primary input"
                        sources="Built-In Mic,Built-In Back Mic,Wired Headset Mic,BT SCO Headset Mic,USB Device In,USB Headset In"/>
-                <route type="mix" sink="fm input"
-                       sources="FM tuner"/>
+                <route type="mix" sink="fm input" sources="FM tuner"/>
                 <route type="mix" sink="hifi_input" sources="USB Device In,USB Headset In" />
             </routes>
         </module>
 
-        <module name="vx_motvr" halVersion="2.0">
-            <mixPorts>
-                <mixPort name="primary input" role="sink" flags="AUDIO_INPUT_FLAG_HW_HOTWORD">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="16000"
-                             channelMasks="AUDIO_CHANNEL_IN_MONO"/>
-                </mixPort>
-                <mixPort name="trigger" role="sink" flags="AUDIO_INPUT_FLAG_HW_HOTWORD|AUDIO_INPUT_FLAG_CAPTURE_TRIGGER_AUDIO">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="16000"
-                             channelMasks="AUDIO_CHANNEL_IN_MONO"/>
-                </mixPort>
-            </mixPorts>
-            <devicePorts>
-                <devicePort tagName="Built-In Mic" type="AUDIO_DEVICE_IN_BUILTIN_MIC" role="source" address="bottom">
-                </devicePort>
-                <devicePort tagName="Wired Headset Mic" type="AUDIO_DEVICE_IN_WIRED_HEADSET" role="source">
-                </devicePort>
-            </devicePorts>
-            <routes>
-                <route type="mix" sink="primary input"
-                       sources="Built-In Mic,Wired Headset Mic"/>
-                <route type="mix" sink="trigger"
-                       sources="Built-In Mic,Wired Headset Mic"/>
-            </routes>
-        </module>
+        <!-- Usb Audio HAL -->
+        <xi:include href="usb_audio_policy_configuration.xml"/>
 
         <!-- Remote Submix Audio HAL -->
         <xi:include href="r_submix_audio_policy_configuration.xml"/>
