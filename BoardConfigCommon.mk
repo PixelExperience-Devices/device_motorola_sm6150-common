@@ -63,10 +63,11 @@ TARGET_MODULE_ALIASES += \
     apr_dlkm.ko:audio_apr.ko \
     bolero_cdc_dlkm.ko:audio_bolero_cdc.ko \
     hdmi_dlkm.ko:audio_hdmi.ko \
-    machine_dlkm.ko:audio_machine_sm6150.ko \
+    machine_dlkm.ko:audio_machine_talos.ko \
     mbhc_dlkm.ko:audio_mbhc.ko \
     native_dlkm.ko:audio_native.ko \
     pinctrl_lpi_dlkm.ko:audio_pinctrl_lpi.ko \
+    pinctrl_wcd_dlkm.ko:audio_pinctrl_wcd.ko \
     platform_dlkm.ko:audio_platform.ko \
     q6_dlkm.ko:audio_q6.ko \
     q6_notifier_dlkm.ko:audio_q6_notifier.ko \
@@ -79,14 +80,14 @@ TARGET_MODULE_ALIASES += \
     tx_macro_dlkm.ko:audio_tx_macro.ko \
     usf_dlkm.ko:audio_usf.ko \
     va_macro_dlkm.ko:audio_va_macro.ko \
+    wcd934x_dlkm.ko:audio_wcd934x.ko \
     wcd937x_dlkm.ko:audio_wcd937x.ko \
     wcd937x_slave_dlkm.ko:audio_wcd937x_slave.ko \
-    wcd938x_dlkm.ko:audio_wcd938x.ko \
-    wcd938x_slave_dlkm.ko:audio_wcd938x_slave.ko \
     wcd9xxx_dlkm.ko:audio_wcd9xxx.ko \
     wcd_core_dlkm.ko:audio_wcd_core.ko \
+    wcd_spi_dlkm.ko:audio_wcd_spi.ko \
+    wglink_dlkm.ko:audio_wglink.ko \
     wsa881x_dlkm.ko:audio_wsa881x.ko \
-    wsa883x_dlkm.ko:audio_wsa883x.ko \
     wsa_macro_dlkm.ko:audio_wsa_macro.ko
 
 # Kernel modules - WLAN
