@@ -20,7 +20,7 @@
 #include <android-base/strings.h>
 
 namespace {
-    constexpr const char *kFileHbm = "/sys/devices/platform/soc/soc:qcom,dsi-display-primary/dsi_display_hbm";
+    constexpr const char *kFileHbm = "/sys/devices/platform/soc/soc:qcom,dsi-display/dsi_display_hbm";
 };  // anonymous namespace
 
 using ::android::base::ReadFileToString;
