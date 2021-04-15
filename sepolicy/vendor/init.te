@@ -16,3 +16,6 @@ allowxperm init loop_device:blk_file ioctl {
 
 # Product persist
 allow init mnt_product_file:dir mounton;
+
+# Wlan firmware
+allow init firmware_file:file mounton;
