@@ -32,7 +32,3 @@ PRODUCT_COPY_FILES += \
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
-
-# Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage-fastbootd
