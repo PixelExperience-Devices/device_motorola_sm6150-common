@@ -10,3 +10,6 @@ allow capsense_reset input_device:chr_file r_file_perms;
 
 allow capsense_reset vendor_sysfs_sensors:dir r_dir_perms;
 allow capsense_reset vendor_sysfs_sensors:file rw_file_perms;
+
+allow capsense_reset vendor_sysfs_capsense:dir r_dir_perms;
+allow capsense_reset vendor_sysfs_capsense:file rw_file_perms;
