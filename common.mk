@@ -257,8 +257,6 @@ PRODUCT_PACKAGES += \
     init.qti.fm.sh \
     qcom.fmradio
 
-PRODUCT_BOOT_JARS += qcom.fmradio
-
 # For config.fs
 PRODUCT_PACKAGES += \
     fs_config_files
@@ -303,15 +301,6 @@ PRODUCT_COPY_FILES += \
 # IMS
 PRODUCT_PACKAGES += \
     ims-moto-libs
-
-PRODUCT_BOOT_JARS += \
-    ims-moto-libs \
-    moto-ims-ext \
-    moto-telephony
-
-PRODUCT_SYSTEM_SERVER_JARS += \
-    moto-ims-ext \
-    moto-telephony
 
 # IPACM
 PRODUCT_PACKAGES += \
@@ -524,6 +513,3 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libnl \
     libwfdaac_vendor
-
-PRODUCT_BOOT_JARS += \
-    WfdCommon
