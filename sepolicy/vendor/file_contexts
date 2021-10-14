@@ -27,6 +27,7 @@
 # Capsense
 /(vendor|system/vendor)/bin/capsense_reset                                 u:object_r:capsense_reset_exec:s0
 /(vendor|system/vendor)/bin/motpsd                                         u:object_r:motpsd_exec:s0
+/sys/class/capsense(/.*)?                                                  u:object_r:vendor_sysfs_capsense:s0
 
 # Radio
 /data/vendor/misc/cutback(/.*)?                         u:object_r:cutback_data_file:s0
