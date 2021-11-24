@@ -284,6 +284,11 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.vendor.use_data_netmgrd=true \
     telephony.lteOnCdmaDevice=1,1
 
+# SOC
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.soc.manufacturer=Qualcomm \
+    ro.soc.model=SM6150
+
 # SurfaceFlinger
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.has_wide_color_display=true \
