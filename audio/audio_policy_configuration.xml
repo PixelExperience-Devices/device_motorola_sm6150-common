@@ -181,14 +181,17 @@
             </routes>
         </module>
 
-        <!-- A2DP Audio HAL -->
-        <xi:include href="/vendor/etc/a2dp_audio_policy_configuration.xml"/>
+        <!-- A2DP Input Audio HAL -->
+        <xi:include href="/vendor/etc/a2dp_in_audio_policy_configuration.xml"/>
 
         <!-- Remote Submix Audio HAL -->
         <xi:include href="r_submix_audio_policy_configuration.xml"/>
 
         <!-- Bluetooth Audio HAL for Hearing aid -->
         <xi:include href="/vendor/etc/bluetooth_hearing_aid_audio_policy_configuration.xml"/>
+
+        <!-- Bluetooth Audio HAL -->
+        <xi:include href="/vendor/etc/bluetooth_audio_policy_configuration.xml"/>
 
     </modules>
     <!-- End of Modules section -->
