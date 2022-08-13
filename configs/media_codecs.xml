@@ -208,6 +208,7 @@ Only the three quirks included above are recognized at this point:
              <Limit name="frame-rate" range="1-30" />
              <Limit name="concurrent-instances" max="16" />
              <Limit name="performance-point-1280x720" value="30" />
+             <Attribute name="software-codec" />
         </MediaCodec>
     </Encoders>
     <Decoders>
@@ -382,6 +383,16 @@ Only the three quirks included above are recognized at this point:
                 <Limit name="performance-point-1920x1080" value="30" />
              </Type>
         </MediaCodec>
+        <MediaCodec name="c2.android.avc.decoder" type="video/avc" update="true">
+	  <!-- profiles and levels:  ProfileHigh : Level51 -->
+	  <Limit name="size" min="2x2" max="1280x720" />
+	  <Limit name="alignment" value="2x2" />
+	  <Limit name="block-size" value="16x16" />
+	  <Limit name="block-count" range="1-3600" />
+	  <Limit name="blocks-per-second" range="1-108000" />
+	  <Limit name="bitrate" range="1-20000000" />
+	  <Feature name="adaptive-playback" />
+	</MediaCodec>
         <MediaCodec name="OMX.google.opus.decoder" type="audio/opus" update="true" rank="100"/>
     </Decoders>
     <Include href="media_codecs_google_video.xml" />
