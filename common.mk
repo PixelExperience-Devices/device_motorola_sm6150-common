@@ -257,8 +257,6 @@ PRODUCT_PACKAGES += \
     init.qti.fm.sh \
     qcom.fmradio
 
-PRODUCT_BOOT_JARS += qcom.fmradio
-
 # For config.fs
 PRODUCT_PACKAGES += \
     fs_config_files
