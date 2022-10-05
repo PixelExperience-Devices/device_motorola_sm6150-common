@@ -125,8 +125,7 @@ PRODUCT_PACKAGES += \
     libsndmonitor \
     libvolumelistener \
     tinymix \
-    libtinycompress \
-    libtinycompress.vendor
+    libtinycompress
 
 ifeq ($(filter %_liber %_parker,$(TARGET_PRODUCT)),)
 PRODUCT_COPY_FILES += \
