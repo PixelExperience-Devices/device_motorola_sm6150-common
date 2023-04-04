@@ -137,7 +137,7 @@ PRODUCT_PACKAGES += \
     libtinycompress \
     libtinycompress.vendor
 
-ifeq ($(filter %_liber,$(TARGET_PRODUCT)),)
+ifeq ($(filter %_liber %_parker,$(TARGET_PRODUCT)),)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
 endif
